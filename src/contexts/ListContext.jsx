@@ -11,6 +11,9 @@ function ListProvider({ children }) {
             .then(res => {
                 setPosts(res.data)
             })
+            .catch(err => {
+                alert(err)
+            })
     };
 
     useEffect(getPosts, []);
