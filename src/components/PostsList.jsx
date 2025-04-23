@@ -1,20 +1,23 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
+import { useList } from "../contexts/ListContext";
 
 export default function PostsList() {
 
-    // parte nel contect fino a useeffect
-    const [posts, setPosts] = useState([]);
+    // // parte nel contect fino a useeffect
+    // const [posts, setPosts] = useState([]);
 
-    function getPosts() {
-        axios.get('https://jsonplaceholder.typicode.com/posts')
-            .then(res => {
-                setPosts(res.data)
-            })
-    };
+    // function getPosts() {
+    //     axios.get('https://jsonplaceholder.typicode.com/posts')
+    //         .then(res => {
+    //             setPosts(res.data)
+    //         })
+    // };
 
-    useEffect(getPosts, []);
+    const { posts } = useList();
+
+    // useEffect(getPosts, []);
 
     return (
         <>
